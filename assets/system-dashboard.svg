@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">System overview</title><desc id="desc">A cyber system overview with code, engineering radar and current status modules.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7CCCF5"/><stop offset=".56" stop-color="#D6F0FE"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
+    <linearGradient id="neon"><stop stop-color="#22D3EE"/><stop offset=".55" stop-color="#60A5FA"/><stop offset="1" stop-color="#C084FC"/></linearGradient>
+    <radialGradient id="halo"><stop stop-color="#FFFFFF" stop-opacity=".72"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+    <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".75" fill="#075985" opacity=".11"/></pattern>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="cloud" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="14"/></filter>
+    <clipPath id="clip"><rect width="1200" height="560" rx="22"/></clipPath>
+  </defs>
+  <style>
+    .m{font-family:"Cascadia Code",Consolas,monospace}.u{font-family:Inter,"Segoe UI",Arial,sans-serif}.dash{animation:dash 10s linear infinite}.pulse{animation:pulse 2s ease-in-out infinite}.spin{animation:spin 24s linear infinite;transform-origin:610px 288px}
+    [fill="#090E18"],[fill="#111827"],[fill="#0A1422"],[fill="#0A111E"],[fill="#0C1724"]{fill:#FFFFFF;fill-opacity:.82}[fill="#172033"]{fill:#D7ECF8}
+    [fill="#F1F5F9"],[fill="#E2E8F0"],[fill="#CBD5E1"]{fill:#153B56}[fill="#94A3B8"]{fill:#365F7A}[fill="#64748B"]{fill:#52758C}[fill="#475569"],[fill="#334155"]{fill:#6FA4C2}
+    [fill="#67E8F9"],[fill="#A5F3FC"],[fill="#7DD3FC"]{fill:#0369A1}[fill="#93C5FD"],[fill="#BFDBFE"]{fill:#1D4ED8}[fill="#C7D2FE"],[fill="#C4B5FD"]{fill:#5B21B6}[fill="#E9D5FF"]{fill:#7E22CE}[fill="#A7F3D0"]{fill:#047857}
+    [stroke="#334155"],[stroke="#25354B"],[stroke="#302C51"]{stroke:#78BCE1}
+    @keyframes dash{to{stroke-dashoffset:-200}}@keyframes pulse{50%{opacity:.3}}@keyframes spin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.dash,.pulse,.spin{animation:none}}
+  </style>
+  <g clip-path="url(#clip)">
+    <rect width="1200" height="560" fill="url(#bg)"/><rect width="1200" height="560" fill="url(#dots)"/>
+    <g fill="#FFFFFF" opacity=".48" filter="url(#cloud)"><ellipse cx="210" cy="510" rx="180" ry="36"/><ellipse cx="330" cy="495" rx="110" ry="48"/><ellipse cx="1030" cy="85" rx="155" ry="34"/><ellipse cx="1120" cy="66" rx="90" ry="44"/></g>
+    <circle cx="610" cy="288" r="310" fill="url(#halo)"/>
+    <path d="M0 59H84l12-12h317l12 12h350l12-12h317l12 12h84" fill="none" stroke="#334155"/>
+    <text class="m" x="42" y="34" fill="#67E8F9" font-size="13" letter-spacing="2">01 // SYSTEM OVERVIEW</text>
+    <circle class="pulse" cx="1132" cy="30" r="4" fill="#34D399" filter="url(#glow)"/><text class="m" x="1120" y="34" text-anchor="end" fill="#64748B" font-size="11">ALL MODULES NOMINAL</text>
+
+    <g transform="translate(38 82)">
+      <rect width="355" height="326" rx="14" fill="#090E18" stroke="#25354B"/>
+      <rect width="355" height="38" rx="14" fill="#111827"/><path d="M0 22v16h355V22" fill="#111827"/>
+      <text class="m" x="18" y="25" fill="#64748B" font-size="10">MODULE // BUILD_PHILOSOPHY.CPP</text>
+      <g class="m" font-size="12.5">
+        <text x="17" y="68" fill="#475569">01</text><text x="48" y="68" fill="#C084FC">class</text><text x="89" y="68" fill="#7DD3FC">Engineer</text><text x="150" y="68" fill="#CBD5E1">{</text>
+        <text x="17" y="94" fill="#475569">02</text><text x="48" y="94" fill="#C084FC">public</text><text x="89" y="94" fill="#CBD5E1">:</text>
+        <text x="17" y="120" fill="#475569">03</text><text x="68" y="120" fill="#60A5FA">void</text><text x="110" y="120" fill="#A5F3FC">build</text><text x="145" y="120" fill="#CBD5E1">() {</text>
+        <text x="17" y="146" fill="#475569">04</text><text x="89" y="146" fill="#A5F3FC">understand</text><text x="162" y="146" fill="#CBD5E1">(constraints);</text>
+        <text x="17" y="172" fill="#475569">05</text><text x="89" y="172" fill="#A5F3FC">design</text><text x="138" y="172" fill="#CBD5E1">(system);</text>
+        <text x="17" y="198" fill="#475569">06</text><text x="89" y="198" fill="#A5F3FC">verify</text><text x="138" y="198" fill="#CBD5E1">(behavior);</text>
+        <text x="17" y="224" fill="#475569">07</text><text x="68" y="224" fill="#CBD5E1">}</text>
+        <text x="17" y="250" fill="#475569">08</text><text x="48" y="250" fill="#CBD5E1">};</text>
+        <text x="17" y="289" fill="#475569">09</text><text x="48" y="289" fill="#34D399">// no magic, only understood layers</text>
+      </g>
+      <path d="M17 307h52l8-9 10 18 12-30 13 20 15-8 14 9h194" fill="none" stroke="#22D3EE" stroke-opacity=".65"/>
+    </g>
+
+    <g>
+      <text class="m" x="610" y="92" text-anchor="middle" fill="#64748B" font-size="10" letter-spacing="2">ENGINEERING RADAR // QUALITATIVE</text>
+      <g fill="none" stroke="#334155">
+        <polygon points="610,126 750,207 750,369 610,450 470,369 470,207"/>
+        <polygon points="610,165 716,226 716,350 610,411 504,350 504,226" opacity=".8"/>
+        <polygon points="610,204 682,246 682,330 610,372 538,330 538,246" opacity=".65"/>
+        <path d="M610 126V450M470 207l280 162M750 207L470 369" opacity=".65"/>
+      </g>
+      <circle class="spin" cx="610" cy="288" r="147" fill="none" stroke="url(#neon)" stroke-width="1.5" stroke-dasharray="2 16" opacity=".6"/>
+      <polygon points="610,148 724,222 696,338 610,416 494,355 486,216" fill="#3B82F6" fill-opacity=".13" stroke="url(#neon)" stroke-width="2" filter="url(#glow)"/>
+      <g fill="#67E8F9"><circle cx="610" cy="148" r="4"/><circle cx="724" cy="222" r="4"/><circle cx="696" cy="338" r="4"/><circle cx="610" cy="416" r="4"/><circle cx="494" cy="355" r="4"/><circle cx="486" cy="216" r="4"/></g>
+      <g class="m" fill="#94A3B8" font-size="10" letter-spacing="1">
+        <text x="610" y="113" text-anchor="middle">LOW LEVEL</text><text x="770" y="204">EMBEDDED</text><text x="775" y="383">BACKEND</text><text x="610" y="432" text-anchor="middle">TOOLING</text><text x="407" y="383">INTERFACE</text><text x="407" y="204">SYSTEMS</text>
+      </g>
+      <circle cx="610" cy="288" r="21" fill="#0A1422" stroke="#67E8F9"/><circle class="pulse" cx="610" cy="288" r="7" fill="#67E8F9" filter="url(#glow)"/>
+    </g>
+
+    <g transform="translate(824 82)">
+      <rect width="338" height="326" rx="14" fill="#090E18" stroke="#302C51"/>
+      <text class="m" x="20" y="30" fill="#C4B5FD" font-size="11" letter-spacing="1.7">CURRENT LOADOUT</text>
+      <g class="m" font-size="11">
+        <text x="20" y="67" fill="#64748B">CORE</text><text x="104" y="67" fill="#E2E8F0">C / C++ / Python</text>
+        <rect x="20" y="82" width="298" height="4" rx="2" fill="#172033"/><rect x="20" y="82" width="274" height="4" rx="2" fill="url(#neon)"/>
+        <text x="20" y="119" fill="#64748B">DOMAIN</text><text x="104" y="119" fill="#E2E8F0">Embedded / Systems</text>
+        <rect x="20" y="134" width="298" height="4" rx="2" fill="#172033"/><rect x="20" y="134" width="244" height="4" rx="2" fill="url(#neon)"/>
+        <text x="20" y="171" fill="#64748B">TOOLING</text><text x="104" y="171" fill="#E2E8F0">CMake / Docker / Git</text>
+        <rect x="20" y="186" width="298" height="4" rx="2" fill="#172033"/><rect x="20" y="186" width="225" height="4" rx="2" fill="url(#neon)"/>
+        <text x="20" y="223" fill="#64748B">LEARNING</text><text x="104" y="223" fill="#C4B5FD">React / AI</text>
+        <rect x="20" y="238" width="298" height="4" rx="2" fill="#172033"/><rect class="dash" x="20" y="238" width="158" height="4" rx="2" fill="#A855F7" opacity=".85"/>
+      </g>
+      <rect x="20" y="270" width="298" height="36" rx="5" fill="#0C1724" stroke="#225B69"/>
+      <circle class="pulse" cx="39" cy="288" r="4" fill="#34D399"/><text class="m" x="53" y="292" fill="#A7F3D0" font-size="11">STATUS: BUILDING / LEARNING</text>
+    </g>
+
+    <g transform="translate(38 435)" class="m">
+      <g><rect width="265" height="88" rx="12" fill="#0A111E" stroke="#164E63"/><text x="18" y="26" fill="#64748B" font-size="10">PRIMARY MODE</text><text x="18" y="57" fill="#67E8F9" font-size="21">SYSTEM THINKING</text><text x="18" y="76" fill="#334155" font-size="9">TRACE EVERY LAYER</text></g>
+      <g transform="translate(285)"><rect width="265" height="88" rx="12" fill="#0A111E" stroke="#1E3A5F"/><text x="18" y="26" fill="#64748B" font-size="10">EXECUTION</text><text x="18" y="57" fill="#93C5FD" font-size="21">BUILD + VERIFY</text><text x="18" y="76" fill="#334155" font-size="9">REPRODUCIBLE FIRST</text></g>
+      <g transform="translate(570)"><rect width="265" height="88" rx="12" fill="#0A111E" stroke="#37306B"/><text x="18" y="26" fill="#64748B" font-size="10">EXPANSION</text><text x="18" y="57" fill="#C4B5FD" font-size="21">REACT + AI</text><text x="18" y="76" fill="#334155" font-size="9">LEARN THROUGH SHIPPING</text></g>
+      <g transform="translate(855)"><rect width="269" height="88" rx="12" fill="#0A111E" stroke="#4C1D70"/><text x="18" y="26" fill="#64748B" font-size="10">END STATE</text><text x="18" y="57" fill="#E9D5FF" font-size="21">USEFUL SOFTWARE</text><text x="18" y="76" fill="#334155" font-size="9">CLEAN FROM CORE TO UI</text></g>
+    </g>
+  </g>
+</svg>
