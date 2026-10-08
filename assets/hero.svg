@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" role="img" aria-labelledby="title desc">
+  <title id="title">CloudYiC Engineering Dashboard</title>
+  <desc id="desc">Animated cyber engineering dashboard for a C, C++, embedded and Python developer.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#48B9F2"/><stop offset=".5" stop-color="#A8DDF8"/><stop offset="1" stop-color="#F8FCFF"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#22D3EE"/><stop offset=".48" stop-color="#60A5FA"/><stop offset="1" stop-color="#C084FC"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFFFFF" stop-opacity=".9"/><stop offset="1" stop-color="#EAF7FF" stop-opacity=".82"/>
+    </linearGradient>
+    <radialGradient id="g1"><stop stop-color="#FFFFFF" stop-opacity=".72"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+    <radialGradient id="g2"><stop stop-color="#7DD3FC" stop-opacity=".28"/><stop offset="1" stop-color="#7DD3FC" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#075985" stroke-opacity=".075"/></pattern>
+    <pattern id="micro" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".7" fill="#0284C7" opacity=".12"/></pattern>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dy="14" stdDeviation="18" flood-color="#075985" flood-opacity=".2"/></filter>
+    <filter id="cloud" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="13"/></filter>
+    <clipPath id="clip"><rect width="1200" height="480" rx="24"/></clipPath>
+  </defs>
+  <style>
+    .mono{font-family:"Cascadia Code","SFMono-Regular",Consolas,monospace}.ui{font-family:Inter,"Segoe UI",Arial,sans-serif}
+    .scan{animation:scan 5s linear infinite}.dash{animation:dash 8s linear infinite}.pulse{animation:pulse 2.2s ease-in-out infinite}.blink{animation:blink 1s step-end infinite}
+    .role{opacity:0;animation:roles 16s infinite}.r1{opacity:1}.r2{animation-delay:4s}.r3{animation-delay:8s}.r4{animation-delay:12s}
+    @keyframes scan{from{transform:translateY(-80px)}to{transform:translateY(560px)}}@keyframes dash{to{stroke-dashoffset:-160}}@keyframes pulse{50%{opacity:.28}}@keyframes blink{50%{opacity:0}}
+    @keyframes roles{0%,21%{opacity:1;transform:translateY(0)}24%,100%{opacity:0;transform:translateY(-5px)}}
+    [fill="#07101D"],[fill="#0C1D2B"],[fill="#10182D"],[fill="#15142D"],[fill="#1B1231"],[fill="#0A1120"],[fill="#121A2A"]{fill:#FFFFFF;fill-opacity:.78}
+    [fill="#F8FAFC"],[fill="#F1F5F9"],[fill="#E2E8F0"],[fill="#D8E3F0"],[fill="#CBD5E1"]{fill:#123B56}
+    [fill="#94A3B8"]{fill:#345F7C}[fill="#64748B"]{fill:#4F7590}[fill="#475569"],[fill="#334155"]{fill:#6EA6C7}
+    [fill="#67E8F9"],[fill="#A5F3FC"],[fill="#7DD3FC"]{fill:#0369A1}[fill="#BFDBFE"]{fill:#1D4ED8}[fill="#C7D2FE"],[fill="#C4B5FD"]{fill:#5B21B6}[fill="#E9D5FF"],[fill="#A78BFA"]{fill:#7E22CE}[fill="#A7F3D0"]{fill:#047857}
+    [stroke="#334155"],[stroke="#1E3A5F"]{stroke:#77BDE3}
+    @media(prefers-reduced-motion:reduce){.scan,.dash,.pulse,.blink,.role{animation:none}.role{opacity:0}.r1{opacity:1}}
+  </style>
+  <g clip-path="url(#clip)">
+    <rect width="1200" height="480" fill="url(#bg)"/><rect width="1200" height="480" fill="url(#grid)"/>
+    <circle cx="75" cy="420" r="360" fill="url(#g1)"/><circle cx="1100" cy="40" r="390" fill="url(#g2)"/><rect x="690" width="510" height="480" fill="url(#micro)"/>
+    <g fill="#FFFFFF" opacity=".58" filter="url(#cloud)"><ellipse cx="188" cy="64" rx="130" ry="30"/><ellipse cx="275" cy="52" rx="92" ry="43"/><ellipse cx="1002" cy="438" rx="160" ry="36"/><ellipse cx="1102" cy="418" rx="105" ry="48"/></g>
+    <path d="M0 34H430l16 16h296l16-16h442M0 445h328l14-14h508l14 14h336" fill="none" stroke="url(#neon)" stroke-opacity=".42"/>
+    <path class="dash" d="M-30 370C160 272 285 445 470 347s294-82 402-6 214 54 360-36" fill="none" stroke="url(#neon)" stroke-width="2" stroke-dasharray="8 12" opacity=".35"/>
+    <rect class="scan" x="0" y="0" width="1200" height="70" fill="url(#neon)" opacity=".025"/>
+
+    <g class="mono" font-size="11" letter-spacing="2">
+      <text x="34" y="27" fill="#475569">SYS.00</text><text x="1165" y="27" text-anchor="end" fill="#475569">PROFILE / CLOUDYIC</text>
+      <text x="22" y="92" fill="#334155">01</text><text x="22" y="154" fill="#334155">02</text><text x="22" y="216" fill="#334155">03</text><text x="22" y="278" fill="#334155">04</text><text x="22" y="340" fill="#334155">05</text>
+      <circle class="pulse" cx="80" cy="72" r="5" fill="#34D399" filter="url(#glow)"/><text x="96" y="76" fill="#94A3B8">ENGINEERING NODE ONLINE</text>
+    </g>
+
+    <g transform="translate(70 108)">
+      <text class="ui" x="0" y="92" font-size="90" font-weight="900" letter-spacing="-3" fill="#F8FAFC">CLOUD</text>
+      <text class="ui" x="292" y="92" font-size="90" font-weight="900" letter-spacing="-3" fill="url(#neon)">YiC</text>
+      <text class="mono" x="5" y="126" fill="#64748B" font-size="13" letter-spacing="4">ENGINEERING DASHBOARD // H1</text>
+      <rect x="2" y="151" width="490" height="48" rx="6" fill="#07101D" stroke="#1E3A5F"/>
+      <text class="mono" x="20" y="181" fill="#67E8F9" font-size="17">&gt;</text>
+      <g class="mono" x="0" y="0" font-size="17" fill="#D8E3F0">
+        <text class="role r1" x="48" y="181">C / C++ DEVELOPER</text>
+        <text class="role r2" x="48" y="181">EMBEDDED SYSTEM ENGINEER</text>
+        <text class="role r3" x="48" y="181">PYTHON ENGINEER</text>
+        <text class="role r4" x="48" y="181">REACT + AI EXPLORER</text>
+      </g>
+      <rect class="blink" x="462" y="165" width="9" height="20" fill="#67E8F9"/>
+      <g class="mono" font-size="12">
+        <g transform="translate(2 222)"><rect width="95" height="31" rx="4" fill="#0C1D2B" stroke="#22D3EE" stroke-opacity=".55"/><text x="47" y="20" text-anchor="middle" fill="#A5F3FC">LOW LEVEL</text></g>
+        <g transform="translate(108 222)"><rect width="103" height="31" rx="4" fill="#10182D" stroke="#60A5FA" stroke-opacity=".55"/><text x="51" y="20" text-anchor="middle" fill="#BFDBFE">EMBEDDED</text></g>
+        <g transform="translate(222 222)"><rect width="94" height="31" rx="4" fill="#15142D" stroke="#818CF8" stroke-opacity=".55"/><text x="47" y="20" text-anchor="middle" fill="#C7D2FE">BACKEND</text></g>
+        <g transform="translate(327 222)"><rect width="112" height="31" rx="4" fill="#1B1231" stroke="#C084FC" stroke-opacity=".55"/><text x="56" y="20" text-anchor="middle" fill="#E9D5FF">FULL STACK</text></g>
+      </g>
+    </g>
+
+    <g transform="translate(690 72)" filter="url(#shadow)">
+      <rect width="450" height="330" rx="18" fill="url(#panel)" stroke="#334155"/>
+      <rect width="450" height="45" rx="18" fill="#121A2A"/><path d="M0 25V45H450V25" fill="#121A2A"/>
+      <circle cx="27" cy="23" r="5" fill="#FB7185"/><circle cx="47" cy="23" r="5" fill="#FBBF24"/><circle cx="67" cy="23" r="5" fill="#34D399"/>
+      <text class="mono" x="225" y="28" text-anchor="middle" fill="#64748B" font-size="11">cloudyic@workbench: ~/profile</text>
+      <g class="mono" font-size="13">
+        <text x="28" y="82" fill="#67E8F9">$</text><text x="47" y="82" fill="#CBD5E1">inspect --profile</text>
+        <text x="47" y="111" fill="#64748B">core</text><text x="146" y="111" fill="#F1F5F9">C / C++ / Python</text>
+        <text x="47" y="138" fill="#64748B">domain</text><text x="146" y="138" fill="#F1F5F9">systems / embedded</text>
+        <text x="47" y="165" fill="#64748B">learning</text><text x="146" y="165" fill="#C4B5FD">React / AI engineering</text>
+        <text x="28" y="203" fill="#67E8F9">$</text><text x="47" y="203" fill="#CBD5E1">run build-loop</text>
+        <text x="47" y="232" fill="#34D399">[OK]</text><text x="95" y="232" fill="#94A3B8">understand constraints</text>
+        <text x="47" y="258" fill="#34D399">[OK]</text><text x="95" y="258" fill="#94A3B8">design the system</text>
+        <text x="47" y="284" fill="#FBBF24">[··]</text><text x="95" y="284" fill="#D8E3F0">build / test / refine</text>
+      </g>
+      <path d="M28 308h30l10-9 14 18 13-12 17 3 13-18 14 25 18-9 13 2 12-15 16 15h224" fill="none" stroke="url(#neon)" stroke-width="1.5" opacity=".7"/>
+    </g>
+
+    <g class="mono" font-size="10" fill="#475569" letter-spacing="1.5">
+      <text x="70" y="451">COORD 31.2304N / 121.4737E</text><text x="1132" y="451" text-anchor="end">BUILD // INSPECT // REFINE // SHIP</text>
+    </g>
+  </g>
+</svg>
