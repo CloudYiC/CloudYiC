@@ -1,0 +1,71 @@
+name: Update Engineering Dashboard
+
+on:
+  schedule:
+    - cron: "17 */12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-dashboard
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Render live GitHub telemetry
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROFILE_USER: ${{ github.repository_owner }}
+        run: node scripts/update-dashboard.mjs
+
+      - name: Generate contribution snake
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            assets/github-contribution-snake.svg?color_snake=%230284c7
+
+      - name: Commit and compact dashboard history
+        shell: bash
+        env:
+          MAX_VISIBLE_COMMITS: "5"
+          TARGET_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/live-metrics.svg assets/github-contribution-snake.svg
+
+          changed=0
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: refresh profile dashboard"
+            changed=1
+          fi
+
+          commit_count=$(git rev-list --count HEAD)
+          if (( commit_count > MAX_VISIBLE_COMMITS )); then
+            current_tree=$(git write-tree)
+            compacted_commit=$(printf '%s\n' "chore: compact profile dashboard snapshot" | git commit-tree "$current_tree")
+            git reset --hard "$compacted_commit"
+            git push --force-with-lease origin "HEAD:${TARGET_BRANCH}"
+            echo "History compacted from ${commit_count} commits to one snapshot."
+          elif (( changed == 1 )); then
+            git push origin "HEAD:${TARGET_BRANCH}"
+          else
+            echo "Dashboard is already up to date."
+          fi
